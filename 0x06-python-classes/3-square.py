@@ -3,6 +3,7 @@
 New class square
 """
 
+
 class Square():
     """ Defines a square """
     def __init__(self, size=0):
@@ -14,4 +15,4 @@ class Square():
 
     def area(self):
         """ Define area of square """
-        return self.__size * self.__size
+        return (self.__size * self.__size)
