@@ -2,6 +2,8 @@
 """
 New class square
 """
+
+
 class Square():
     """ Empty square """
     pass
