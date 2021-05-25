@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Write a class Rectangle that defines a rectangle by: (based on 1-rectangle.py)
+Write a class Rectangle that defines a rectangle by: (based on 0-rectangle.py)
 """
 
 
@@ -14,7 +14,7 @@ class Rectangle():
     @property
     def width(self):
         """width"""
-        return (self.width)
+        return (self.__width)
 
     @width.setter
     def width(self, value):
@@ -41,7 +41,7 @@ class Rectangle():
 
     def area(self):
         """rectangle area"""
-        return (self.__height * self.__height)
+        return (self.__height * self.__width)
 
     def perimeter(self):
         """rectangle perimeter"""
