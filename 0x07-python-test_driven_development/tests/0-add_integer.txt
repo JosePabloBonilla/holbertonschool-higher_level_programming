@@ -1,0 +1,74 @@
+Test file for ''0-add_integer'' module
+======================================
+
+How to use ''add_integer''
+------------------------------
+
+First I have to import ''add_integer'' from
+the ''0-add_integer'' module
+-------------------------------------------
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+How to use correctly:
+
+#a = int, b = int
+>>> add_integer(12, 2)
+14
+
+#a = neg int, b = int
+>>> add_integer(-12, 2)
+-10
+
+#a = 0, b = int
+>>> add_integer(0, 2)
+2
+
+#a = float, b = int
+>>> add_integer(2.2, 2)
+4
+
+#a = int, b = float
+>>> add_integer(2, 2.8)
+4
+
+#a = float, b = float
+>>> add_integer(2.5, 2.2)
+4
+
+On errors:
+#a = None, b = int
+>>> add_integer(None, 98)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+#a = int, b = None
+>>> add_integer(98, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+#a = None
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+#a = str
+>>> add_integer('games')
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+#a = int, b = str
+>>> add_integer(2, 'games')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+#a = str, b = str
+>>> add_integer('board', 'games')
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
