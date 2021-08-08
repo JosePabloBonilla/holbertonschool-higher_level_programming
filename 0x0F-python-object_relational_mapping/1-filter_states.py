@@ -17,12 +17,11 @@ if __name__ == '__main__':
 
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states\
-                    WHERE name LIKE 'N%'\
-                    ORDER BY states,id")
+                    WHERE name LIKE BINARY 'N%'\
+                    ORDER BY id ASC")
     states = cursor.fetchall()
 
     for i in states:
-        if i[1][0] == "N":
         print(i)
 
     cursor.close
