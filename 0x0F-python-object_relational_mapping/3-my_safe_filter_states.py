@@ -3,16 +3,17 @@
 Wait, do you remember the previous task? Did you test "Arizona';
 TRUNCATE TABLE states ; SELECT * FROM states WHERE name = '" as an input?
 """
-import MySQLdb
-from sys import argv
 
 
 if __name__ == '__main__':
+    import MySQLdb
+    from sys import argv
+
     db = MySQLdb.connect(user=argv[1],
-            passwd=argv[2],
-            database=argv[3],
-            host="localhost",
-            port=3306)
+                         passwd=argv[2],
+                         database=argv[3],
+                         host="localhost",
+                         port=3306)
 
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states\
