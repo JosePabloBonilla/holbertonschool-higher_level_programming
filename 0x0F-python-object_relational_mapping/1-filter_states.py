@@ -22,7 +22,8 @@ if __name__ == '__main__':
     states = cursor.fetchall()
 
     for i in states:
-        print (i)
+        if i[1][0] == "N":
+        print(i)
 
     cursor.close
     db.close
