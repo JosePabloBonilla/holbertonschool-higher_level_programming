@@ -10,6 +10,5 @@ if __name__ == "__main__":
     web = sys.argv[1]
     mail = urllib.parse.urlencode({'email': sys.argv[2]})
     mail = mail.encode('utf8')
-    
     with urllib.request.urlopen(web, mail) as response:
         print(response.read().decode('utf8'))
