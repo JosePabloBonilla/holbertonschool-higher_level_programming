@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 """takes email, sends a POST request to the passed URL"""
-import urllib.request import Request, urlopen
-import urllib.parse import urlencode
+import urllib.request
+import urllib.parse
 import sys
 
 
 if __name__ == "__main__":
 
-    values = {'email': sys.argv[2]}
-    data = urlencode(values).encode('utf-8')
-    response = Request(argv[1], data)
-
-    with urlopen(response) as File:
-        print(File.read().decode('utf-8'))
+    web = sys.argv[1]
+    mail = urllib.parse.urlencode({'email': sys.argv[2]})
+    mail = mail.encode('utf8')
+    
+    with urllib.request.urlopen(web, mail) as response:
+        print(response.read().decode('utf8'))
