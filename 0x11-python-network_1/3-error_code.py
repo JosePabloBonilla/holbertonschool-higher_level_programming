@@ -1,19 +1,19 @@
 #!/usr/bin/python3
 """ sends a request to the URL and displays the body of the response """
-import urllib.request
-import sys
+from urllib.request import Request, urlopen
+from urllib.parse import urlencode
 from urllib.error import HTTPError
+from sys import argv
 
 
 if __name__ == "__main__":
 
-    url = sys.argv[1]
-    req = urllib.request.Request(url)
+    urlPort = argv[1]
+    response = Response(urlPort)
 
     try:
-        with urllib.rquest.urlopen(req) as response:
-            html = response.read()
-    except HTTPError as e:
-        print('Error code: {}'.format(e.code))
-    else:
-        print(html.decode('utf-8))
+        with urlopen(response) as File:
+            print(File.read().decode('utf-8'))
+
+    except HTTPError as err:
+        print('Error code: {}'.format(err.code))
